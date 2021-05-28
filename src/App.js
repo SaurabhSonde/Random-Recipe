@@ -19,9 +19,9 @@ const App = () => {
   useEffect(() => {
     getRecipes();
   }, []);
+
   return (
     <div className="App">
-      {/* <NavBar /> */}
       <Home recipes={recipes} />
     </div>
   );
