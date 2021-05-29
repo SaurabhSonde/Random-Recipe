@@ -34,7 +34,6 @@ const App = () => {
           <Route
             path="/viewsteps"
             exact
-            // component={() => <ViewRecipe recipes={recipes} />}
             render={(props) => <ViewSteps {...props} recipes={recipes} />}
           />
           <Home recipes={recipes} />
