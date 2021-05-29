@@ -1,6 +1,7 @@
 import React from "react";
 import { Row, Col, Container, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import Footer from "./Footer";
 
 const Home = ({ recipes }) => {
   return (
@@ -163,11 +164,12 @@ const Home = ({ recipes }) => {
               paddingTop: "5%",
               height: "630px",
               width: "550px",
-              marginLeft: "50px",
+              marginLeft: "20px",
             }}
           />
         </Col>
       </Row>
+      <Footer />
     </div>
   );
 };

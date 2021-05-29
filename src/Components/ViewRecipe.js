@@ -1,6 +1,7 @@
 import React from "react";
 import { Row, Col, Container, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import Footer from "./Footer";
 const ViewRecipe = ({ recipes }) => {
   return (
     <div>
@@ -21,7 +22,7 @@ const ViewRecipe = ({ recipes }) => {
               Ingredients
             </h5>
 
-            {/* Key Points */}
+            {/* Loooing through all recipe ingredients */}
             {recipes[0]?.extendedIngredients.map((ingredient, index) => (
               <div
                 style={{
@@ -43,8 +44,8 @@ const ViewRecipe = ({ recipes }) => {
                 style={{
                   color: "#CCA476",
                   borderRadius: "0",
-                  marginTop: "20em",
-                  marginLeft: "1em",
+                  marginTop: "16em",
+                  marginLeft: "1.7em",
                   float: "left",
                 }}
               >
@@ -80,7 +81,7 @@ const ViewRecipe = ({ recipes }) => {
           >
             Quantity
           </h5>
-          {/* Key Points Values */}
+          {/*  Loooing through all recipe ingredients quantity*/}
           {recipes[0]?.extendedIngredients.map((ingredient, index) => (
             <div
               style={{
@@ -104,11 +105,11 @@ const ViewRecipe = ({ recipes }) => {
               paddingTop: "5%",
               height: "630px",
               width: "550px",
-              marginLeft: "50px",
             }}
           />
         </Col>
       </Row>
+      <Footer />
     </div>
   );
 };
