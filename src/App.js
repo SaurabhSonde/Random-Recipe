@@ -5,20 +5,19 @@ import Home from "./Components/Home";
 import axios from "axios";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import ViewRecipe from "./Components/ViewRecipe";
+import ViewSteps from "./Components/ViewSteps";
 
 const App = () => {
   const [recipes, setRecipes] = useState([]);
-  const apikey = process.env.REACT_APP_API_KEY;
-
-  const getRecipes = async () => {
-    const results = await axios.get(
-      `https://api.spoonacular.com/recipes/random?apiKey=${apikey}`
-    );
-    console.log(results.data);
-    setRecipes(results.data.recipes);
-  };
 
   useEffect(() => {
+    const apikey = process.env.REACT_APP_API_KEY;
+    const getRecipes = async () => {
+      const results = await axios.get(
+        `https://api.spoonacular.com/recipes/random?apiKey=${apikey}`
+      );
+      setRecipes(results.data.recipes);
+    };
     getRecipes();
   }, []);
 
@@ -31,6 +30,12 @@ const App = () => {
             exact
             // component={() => <ViewRecipe recipes={recipes} />}
             render={(props) => <ViewRecipe {...props} recipes={recipes} />}
+          />
+          <Route
+            path="/viewsteps"
+            exact
+            // component={() => <ViewRecipe recipes={recipes} />}
+            render={(props) => <ViewSteps {...props} recipes={recipes} />}
           />
           <Home recipes={recipes} />
         </Switch>
